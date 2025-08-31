@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Overview &mdash; Generative Adversarial Attacks on Medical Text 1.0.0
+      documentation
+    </title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/pygments.css?v=b86133f3"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/css/theme.css?v=e59714d7"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/custom.css?v=a6a68382"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/fonts.css?v=5583d106"
+    />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dataset" href="dataset.html" />
+    <link
+      rel="prev"
+      title="Exploiting Vulnerabilities of Machine Learning Models on Medical Text via Generative Adversarial Attacks"
+      href="../index.html"
+    />
+  </head>
+
+  <body class="wy-body-for-nav">
+    <div class="wy-grid-for-nav">
+      <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+          <div class="wy-side-nav-search">
+            <a href="../index.html" class="icon icon-home">
+              Generative Adversarial Attacks on Medical Text
+            </a>
+            <div role="search">
+              <form
+                id="rtd-search-form"
+                class="wy-form"
+                action="../search.html"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search docs"
+                  aria-label="Search docs"
+                />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </div>
+          </div>
+          <div
+            class="wy-menu wy-menu-vertical"
+            data-spy="affix"
+            role="navigation"
+            aria-label="Navigation menu"
+          >
+            <p class="caption" role="heading" aria-level="2">
+              <span class="caption-text">User Guide:</span>
+            </p>
+            <ul class="current">
+              <li class="toctree-l1 current">
+                <a class="current reference internal" href="#">Overview</a>
+                <ul>
+                  <li class="toctree-l2">
+                    <a
+                      class="reference internal"
+                      href="#proposed-workflow-for-this-project"
+                      >Proposed workflow for this project</a
+                    >
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#environment-setup"
+                      >Environment Setup</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="dataset.html">Dataset</a>
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="result.html"
+                  >Evaluation Results</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="future_research.html"
+                  >Future Research</a
+                >
+              </li>
+            </ul>
+            <p class="caption" role="heading" aria-level="2">
+              <span class="caption-text">Content</span>
+            </p>
+            <ul>
+              <li class="toctree-l1">
+                <a
+                  class="reference internal"
+                  href="../Content/preprocessing.html"
+                  >Pre-processing</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Content/EDA.html"
+                  >Exploratory Data Analysis</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Content/models.html"
+                  >Classification Models</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a
+                  class="reference internal"
+                  href="../Content/attack_algorithm.html"
+                  >Attack Algorithm</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Content/eval.html"
+                  >Evaluation Process</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html"
+            >Generative Adversarial Attacks on Medical Text</a
+          >
+        </nav>
+
+        <div class="wy-nav-content">
+          <div class="rst-content">
+            <div role="navigation" aria-label="Page navigation">
+              <ul class="wy-breadcrumbs">
+                <li>
+                  <a
+                    href="../index.html"
+                    class="icon icon-home"
+                    aria-label="Home"
+                  ></a>
+                </li>
+                <li class="breadcrumb-item active">Overview</li>
+                <li class="wy-breadcrumbs-aside">
+                  <a href="../_sources/Guide/overview.rst.txt" rel="nofollow">
+                    View page source</a
+                  >
+                </li>
+              </ul>
+              <hr />
+            </div>
+            <div
+              role="main"
+              class="document"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Article"
+            >
+              <div itemprop="articleBody">
+                <section id="overview">
+                  <span id="id1"></span>
+                  <h1>
+                    Overview<a
+                      class="headerlink"
+                      href="#overview"
+                      title="Link to this heading"
+                      ></a
+                    >
+                  </h1>
+                  <p>
+                    For researchers, engineers, and practitioners in artificial
+                    intelligence and healthcare domain, this project provides
+                    several insights, including
+                  </p>
+                  <ul class="simple">
+                    <li>
+                      <p>
+                        <strong>Model vulnerability assessment</strong>:
+                        Exploring model vulnerabilities, particularly
+                        traditional machine learning models, Stack Classifier
+                        ensemble methods, and MedBERT when faced with
+                        adversarial attacks
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Testing adversarial attack algorithms</strong>:
+                        Conducting experiments using TextFooler to generate
+                        medical adversarial examples, then analyzing their
+                        impact on the built models and the similarity of the
+                        generated adversarial examples.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Algorithm comparison</strong>: Presenting a
+                        comparison of several models built using different
+                        approaches in terms of accuracy or resilience to
+                        adversarial attacks.
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    For education, this project can serve as a valuable
+                    reference and resource for exploring artificial intelligence
+                    and its application in one of the most crucial fields,
+                    namely health and medicine. This project can help students
+                    research several key topics, namely:
+                  </p>
+                  <ul class="simple">
+                    <li>
+                      <p>
+                        <strong>Adversarial Attacks and Their Impact</strong>:
+                        Understanding how subtle changes imperceptible to humans
+                        can influence AI model predictions, even those
+                        pre-trained for medical contexts.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Healthcare AI Security</strong>: Investigating
+                        the application of AI in sensitive fields such as
+                        healthcare, where diagnostic errors can lead to fatal
+                        outcomes.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Robustness vs. Accuracy</strong>: Demonstrating
+                        why models with near-perfect accuracy still fail when
+                        faced with adversarial attacks, and raising questions
+                        about what strategies can enhance the robustness of such
+                        AI.
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    By applying adversarial attacks to AI in the field of
+                    medical text data, this research contributes to the
+                    development of safer and more trustworthy AI. These findings
+                    highlight the urgent challenges in utilizing AI in the
+                    healthcare field to handle diverse inputs while maintaining
+                    diagnostic accuracy.
+                  </p>
+                  <p>
+                    This research utilizes a medical text dataset describing
+                    conditions experienced by patients with lung disease across
+                    eight categories. Using this dataset, three machine learning
+                    approaches are evaluated: MedBERT, a Stack Classifier
+                    combining traditional algorithms, and traditional
+                    classification. The results show that while all models
+                    achieved nearly perfect accuracy (99.98%), their resilience
+                    varied when faced with adversarial attacks. MedBERT
+                    experienced the highest accuracy drop, decreasing to 14.60%,
+                    while the traditional machine learning model only dropped to
+                    72.30% and the Stack Classifier to 94.60%.
+                  </p>
+                  <p>
+                    This project offers reproducible testing for adversarial
+                    attacks in NLP within the medical field or can be replicated
+                    for other critical fields, driving research and development
+                    in the application of AI in such critical areas.
+                  </p>
+                  <p>
+                    Some of the core components needed for this project include
+                    a dataset, the TextAttack library, and GPU support from
+                    Google Colab.
+                  </p>
+                  <p>
+                    The dataset used is from Kaggle, titled “Lung X-Ray +
+                    Clinical Text.” This dataset contains medical image and text
+                    data with a total of 8 target classes. Each class includes
+                    approximately 10,000 images along with related clinical text
+                    instances. A more detailed explanation of the dataset can be
+                    found on the Dataset page.
+                  </p>
+                  <p>
+                    The main library used is TextAttack, a specialized framework
+                    for performing adversarial attacks. TextAttack provides
+                    various functions for designing adversarial attack
+                    algorithms independently and is already equipped with
+                    implementations of several algorithms published in previous
+                    research.
+                  </p>
+                  <p>
+                    Additionally, GPU usage on Google Colab is required to
+                    accelerate the Adversarial Attack process. This is also
+                    directly recommended by the TextAttack developers, as stated
+                    in their
+                    <a
+                      class="reference external"
+                      href="https://textattack.readthedocs.io/en/master/2notebook/0_End_to_End.html"
+                      >web documentation</a
+                    >
+                  </p>
+                  <p>
+                    Of course, this project also utilizes several other
+                    supporting libraries, which will be explained in the Tools
+                    section.
+                  </p>
+                  <section id="proposed-workflow-for-this-project">
+                    <h2>
+                      Proposed workflow for this project<a
+                        class="headerlink"
+                        href="#proposed-workflow-for-this-project"
+                        title="Link to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <img
+                      alt="Research Flow"
+                      class="align-center"
+                      src="../_images/Scopus_Researchflow.png"
+                    />
+                    <div class="spacer-30"></div>
+                  </section>
+                  <section id="environment-setup">
+                    <h2>
+                      Environment Setup<a
+                        class="headerlink"
+                        href="#environment-setup"
+                        title="Link to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <p>
+                      This project is run entirely on
+                      <strong>Google Colab</strong>, so no manual installation
+                      is required on your local machine. All dependencies can be
+                      run directly in the Colab notebook.
+                    </p>
+                    <p>Main libraries used:</p>
+                    <ul class="simple">
+                      <li><p>Python 3.11.13</p></li>
+                      <li><p>TextAttack 0.3.10</p></li>
+                      <li><p>datasets 0.4.5</p></li>
+                      <li><p>evaluate 4.0.0</p></li>
+                      <li><p>scikit-learn 1.5.2</p></li>
+                      <li><p>Gensim 4.3.3</p></li>
+                      <li><p>NLTK 3.9.1</p></li>
+                      <li><p>XGBoost 2.1.4</p></li>
+                      <li><p>Transformers 4.47.1</p></li>
+                      <li><p>NumPy 1.26.4</p></li>
+                    </ul>
+                    <p>
+                      Additionally, <strong>Google Colab’s GPU</strong> is used
+                      to accelerate the <em>adversarial attack</em> process, but
+                      you can still run the code in your local environment.
+                    </p>
+                  </section>
+                </section>
+              </div>
+            </div>
+            <footer>
+              <div
+                class="rst-footer-buttons"
+                role="navigation"
+                aria-label="Footer"
+              >
+                <a
+                  href="../index.html"
+                  class="btn btn-neutral float-left"
+                  title="Exploiting Vulnerabilities of Machine Learning Models on Medical Text via Generative Adversarial Attacks"
+                  accesskey="p"
+                  rel="prev"
+                  ><span
+                    class="fa fa-arrow-circle-left"
+                    aria-hidden="true"
+                  ></span>
+                  Previous</a
+                >
+                <a
+                  href="dataset.html"
+                  class="btn btn-neutral float-right"
+                  title="Dataset"
+                  accesskey="n"
+                  rel="next"
+                  >Next
+                  <span
+                    class="fa fa-arrow-circle-right"
+                    aria-hidden="true"
+                  ></span
+                ></a>
+              </div>
+
+              <hr />
+
+              <div role="contentinfo">
+                <p>
+                  &#169; Copyright 2025, Aulia Arif Wardhana, Setio Basuki,
+                  Akmal Shahib Maulana.
+                </p>
+              </div>
+
+              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
+              a
+              <a href="https://github.com/readthedocs/sphinx_rtd_theme"
+                >theme</a
+              >
+              provided by <a href="https://readthedocs.org">Read the Docs</a>.
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+      });
+    </script>
+  </body>
+</html>

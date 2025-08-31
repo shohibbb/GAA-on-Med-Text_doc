@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Classification Models &mdash; Generative Adversarial Attacks on Medical
+      Text 1.0.0 documentation
+    </title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/pygments.css?v=b86133f3"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/css/theme.css?v=e59714d7"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/custom.css?v=a6a68382"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/fonts.css?v=5583d106"
+    />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link
+      rel="next"
+      title="Adversarial Attacks Algorithm: TextFooler"
+      href="attack_algorithm.html"
+    />
+    <link rel="prev" title="Exploratory Data Analysis" href="EDA.html" />
+  </head>
+
+  <body class="wy-body-for-nav">
+    <div class="wy-grid-for-nav">
+      <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+          <div class="wy-side-nav-search">
+            <a href="../index.html" class="icon icon-home">
+              Generative Adversarial Attacks on Medical Text
+            </a>
+            <div role="search">
+              <form
+                id="rtd-search-form"
+                class="wy-form"
+                action="../search.html"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search docs"
+                  aria-label="Search docs"
+                />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </div>
+          </div>
+          <div
+            class="wy-menu wy-menu-vertical"
+            data-spy="affix"
+            role="navigation"
+            aria-label="Navigation menu"
+          >
+            <p class="caption" role="heading" aria-level="2">
+              <span class="caption-text">User Guide:</span>
+            </p>
+            <ul>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Guide/overview.html"
+                  >Overview</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Guide/dataset.html"
+                  >Dataset</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Guide/result.html"
+                  >Evaluation Results</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a
+                  class="reference internal"
+                  href="../Guide/future_research.html"
+                  >Future Research</a
+                >
+              </li>
+            </ul>
+            <p class="caption" role="heading" aria-level="2">
+              <span class="caption-text">Content</span>
+            </p>
+            <ul class="current">
+              <li class="toctree-l1">
+                <a class="reference internal" href="preprocessing.html"
+                  >Pre-processing</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="EDA.html"
+                  >Exploratory Data Analysis</a
+                >
+              </li>
+              <li class="toctree-l1 current">
+                <a class="current reference internal" href="#"
+                  >Classification Models</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="attack_algorithm.html"
+                  >Attack Algorithm</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="eval.html"
+                  >Evaluation Process</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html"
+            >Generative Adversarial Attacks on Medical Text</a
+          >
+        </nav>
+
+        <div class="wy-nav-content">
+          <div class="rst-content">
+            <div role="navigation" aria-label="Page navigation">
+              <ul class="wy-breadcrumbs">
+                <li>
+                  <a
+                    href="../index.html"
+                    class="icon icon-home"
+                    aria-label="Home"
+                  ></a>
+                </li>
+                <li class="breadcrumb-item active">Classification Models</li>
+                <li class="wy-breadcrumbs-aside">
+                  <a href="../_sources/Content/models.rst.txt" rel="nofollow">
+                    View page source</a
+                  >
+                </li>
+              </ul>
+              <hr />
+            </div>
+            <div
+              role="main"
+              class="document"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Article"
+            >
+              <div itemprop="articleBody">
+                <section id="classification-models">
+                  <h1>
+                    Classification Models<a
+                      class="headerlink"
+                      href="#classification-models"
+                      title="Link to this heading"
+                      ></a
+                    >
+                  </h1>
+                  <p>
+                    This section describes the classification models used in
+                    this study. In total, five traditional machine learning
+                    models, one ensemble model, and one transformer-based model
+                    were applied. Given that the data used in this project is
+                    text data, building a machine learning model with
+                    traditional algorithms requires word representation
+                    techniques.
+                  </p>
+                  <p>
+                    In this project, three word representation techniques were
+                    used, i.e.
+                  </p>
+                  <ul class="simple">
+                    <li><p>Word2Vec</p></li>
+                    <li><p>Global Vector(GloVe)</p></li>
+                    <li><p>FastText</p></li>
+                  </ul>
+                  <p>The five traditional models used in this project are:</p>
+                  <ol class="arabic simple">
+                    <li><p>Logistic Regression</p></li>
+                    <li><p>Support Vector Machine</p></li>
+                    <li><p>Naive Bayes</p></li>
+                    <li><p>Random Forest</p></li>
+                    <li><p>Extreme Gradient Boosting</p></li>
+                  </ol>
+                  <p>
+                    For the ensemble model, this project uses the stacking
+                    classifier concept, which combines three traditional models
+                    with the best average accuracy as base learners. Thus, the
+                    stacking classifier used consists of:
+                  </p>
+                  <ul class="simple">
+                    <li><p>Random Forest</p></li>
+                    <li><p>Extreme Gradient Boosting</p></li>
+                    <li><p>Support Vector Machine</p></li>
+                  </ul>
+                  <p>
+                    then the best model will be used as a meta learner, namely
+                  </p>
+                  <ul class="simple">
+                    <li><p>Random Forest</p></li>
+                  </ul>
+                  <p>
+                    The transformer-based model used in this project is
+                    <em>MedBERT</em>. MedBERT was chosen based on the fact that
+                    this project involves an NLP task in the form of text
+                    classification with a dataset theme in the form of medical
+                    data. Since MedBERT is a transformer-based model
+                    specifically designed for text classification in the medical
+                    domain, the use of additional word representation techniques
+                    is no longer necessary.
+                  </p>
+                  <p>
+                    The implementation details and full source code for each
+                    model are provided in the project repository. You can
+                    directly access the corresponding Jupyter Notebooks here:
+                  </p>
+                  <ul class="simple">
+                    <li>
+                      <p>
+                        <a
+                          class="reference external"
+                          href="https://github.com/shohibbb/Exploiting-Vulnerabilities-of-Machine-Learning-Models/blob/main/Algorithms_Testing.ipynb"
+                          >algorithms_testing.ipynb</a
+                        >
+                        (contains the implementation of traditional and ensemble
+                        models)
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <a
+                          class="reference external"
+                          href="https://github.com/shohibbb/Exploiting-Vulnerabilities-of-Machine-Learning-Models/blob/main/MedBERT_Testing.ipynb"
+                          >MedBERT_testing.ipynb</a
+                        >
+                        (contains the implementation of the transformer-based
+                        model)
+                      </p>
+                    </li>
+                  </ul>
+                  <div class="admonition note">
+                    <p class="admonition-title">Note</p>
+                    <p>
+                      In this documentation, we only provide the conceptual
+                      explanation of the models. Please refer to the linked
+                      notebooks for the full code implementation and
+                      experimental details.
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <footer>
+              <div
+                class="rst-footer-buttons"
+                role="navigation"
+                aria-label="Footer"
+              >
+                <a
+                  href="EDA.html"
+                  class="btn btn-neutral float-left"
+                  title="Exploratory Data Analysis"
+                  accesskey="p"
+                  rel="prev"
+                  ><span
+                    class="fa fa-arrow-circle-left"
+                    aria-hidden="true"
+                  ></span>
+                  Previous</a
+                >
+                <a
+                  href="attack_algorithm.html"
+                  class="btn btn-neutral float-right"
+                  title="Adversarial Attacks Algorithm: TextFooler"
+                  accesskey="n"
+                  rel="next"
+                  >Next
+                  <span
+                    class="fa fa-arrow-circle-right"
+                    aria-hidden="true"
+                  ></span
+                ></a>
+              </div>
+
+              <hr />
+
+              <div role="contentinfo">
+                <p>
+                  &#169; Copyright 2025, Aulia Arif Wardhana, Setio Basuki,
+                  Akmal Shahib Maulana.
+                </p>
+              </div>
+
+              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
+              a
+              <a href="https://github.com/readthedocs/sphinx_rtd_theme"
+                >theme</a
+              >
+              provided by <a href="https://readthedocs.org">Read the Docs</a>.
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+      });
+    </script>
+  </body>
+</html>
