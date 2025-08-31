@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Evaluation Process &mdash; Generative Adversarial Attacks on Medical Text
+      1.0.0 documentation
+    </title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/pygments.css?v=b86133f3"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/css/theme.css?v=e59714d7"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/custom.css?v=a6a68382"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../_static/fonts.css?v=5583d106"
+    />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script
+      async="async"
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link
+      rel="prev"
+      title="Adversarial Attacks Algorithm: TextFooler"
+      href="attack_algorithm.html"
+    />
+  </head>
+
+  <body class="wy-body-for-nav">
+    <div class="wy-grid-for-nav">
+      <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+          <div class="wy-side-nav-search">
+            <a href="../index.html" class="icon icon-home">
+              Generative Adversarial Attacks on Medical Text
+            </a>
+            <div role="search">
+              <form
+                id="rtd-search-form"
+                class="wy-form"
+                action="../search.html"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search docs"
+                  aria-label="Search docs"
+                />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </div>
+          </div>
+          <div
+            class="wy-menu wy-menu-vertical"
+            data-spy="affix"
+            role="navigation"
+            aria-label="Navigation menu"
+          >
+            <p class="caption" role="heading" aria-level="2">
+              <span class="caption-text">User Guide:</span>
+            </p>
+            <ul>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Guide/overview.html"
+                  >Overview</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Guide/dataset.html"
+                  >Dataset</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="../Guide/result.html"
+                  >Evaluation Results</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a
+                  class="reference internal"
+                  href="../Guide/future_research.html"
+                  >Future Research</a
+                >
+              </li>
+            </ul>
+            <p class="caption" role="heading" aria-level="2">
+              <span class="caption-text">Content</span>
+            </p>
+            <ul class="current">
+              <li class="toctree-l1">
+                <a class="reference internal" href="preprocessing.html"
+                  >Pre-processing</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="EDA.html"
+                  >Exploratory Data Analysis</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="models.html"
+                  >Classification Models</a
+                >
+              </li>
+              <li class="toctree-l1">
+                <a class="reference internal" href="attack_algorithm.html"
+                  >Attack Algorithm</a
+                >
+              </li>
+              <li class="toctree-l1 current">
+                <a class="current reference internal" href="#"
+                  >Evaluation Process</a
+                >
+                <ul>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#model-evaluation"
+                      >Model Evaluation</a
+                    >
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#attack-evaluation"
+                      >Attack Evaluation</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html"
+            >Generative Adversarial Attacks on Medical Text</a
+          >
+        </nav>
+
+        <div class="wy-nav-content">
+          <div class="rst-content">
+            <div role="navigation" aria-label="Page navigation">
+              <ul class="wy-breadcrumbs">
+                <li>
+                  <a
+                    href="../index.html"
+                    class="icon icon-home"
+                    aria-label="Home"
+                  ></a>
+                </li>
+                <li class="breadcrumb-item active">Evaluation Process</li>
+                <li class="wy-breadcrumbs-aside">
+                  <a href="../_sources/Content/eval.rst.txt" rel="nofollow">
+                    View page source</a
+                  >
+                </li>
+              </ul>
+              <hr />
+            </div>
+            <div
+              role="main"
+              class="document"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Article"
+            >
+              <div itemprop="articleBody">
+                <section id="evaluation-process">
+                  <span id="evaluation"></span>
+                  <h1>
+                    Evaluation Process<a
+                      class="headerlink"
+                      href="#evaluation-process"
+                      title="Link to this heading"
+                      ></a
+                    >
+                  </h1>
+                  <section id="model-evaluation">
+                    <h2>
+                      Model Evaluation<a
+                        class="headerlink"
+                        href="#model-evaluation"
+                        title="Link to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <p>
+                      The built model will be evaluated using accuracy,
+                      precision, recall, and F1-score metrics. These four
+                      metrics provide a comprehensive overview of the model’s
+                      performance in recognizing medical text. Accuracy shows
+                      how many predictions are correct, precision measures the
+                      accuracy of positive predictions, recall assesses the
+                      model’s ability to capture all relevant cases, while
+                      F1-score balances the results of precision and recall. In
+                      addition, prediction errors are also noted to identify
+                      patterns of weakness in the model, which can serve as a
+                      basis for future performance improvements.
+                    </p>
+                    <p>
+                      Model performance measurement is simplified by the
+                      functions provided by the <em>scikit-learn</em> library.
+                      However, to provide a clearer understanding, the
+                      mathematical formulation of the metrics used is presented
+                      below.
+                    </p>
+                    <p><strong>Formulasi Metrik:</strong></p>
+                    <ul>
+                      <li>
+                        <p><strong>Accuracy</strong></p>
+                        <div class="math notranslate nohighlight">
+                          \[Accuracy = \frac{TP + TN}{TP + TN + FP + FN}\]
+                        </div>
+                      </li>
+                      <li>
+                        <p><strong>Precision</strong></p>
+                        <div class="math notranslate nohighlight">
+                          \[Precision = \frac{TP}{TP + FP}\]
+                        </div>
+                      </li>
+                      <li>
+                        <p><strong>Recall</strong></p>
+                        <div class="math notranslate nohighlight">
+                          \[Recall = \frac{TP}{TP + FN}\]
+                        </div>
+                      </li>
+                      <li>
+                        <p><strong>F1-Score</strong></p>
+                        <div class="math notranslate nohighlight">
+                          \[F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision
+                          + Recall}\]
+                        </div>
+                      </li>
+                    </ul>
+                    <p><strong>Keterangan:</strong></p>
+                    <ul class="simple">
+                      <li>
+                        <p>
+                          <strong>TP (True Positive):</strong> Positive cases
+                          that are correctly predicted as positive.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <strong>TN (True Negative):</strong> Negative cases
+                          that are correctly predicted as negative.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <strong>FP (False Positive):</strong> Negative cases
+                          that are incorrectly predicted as positive.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <strong>FN (False Negative):</strong> Positive cases
+                          that are incorrectly predicted as negative.
+                        </p>
+                      </li>
+                    </ul>
+                  </section>
+                  <section id="attack-evaluation">
+                    <h2>
+                      Attack Evaluation<a
+                        class="headerlink"
+                        href="#attack-evaluation"
+                        title="Link to this heading"
+                        ></a
+                      >
+                    </h2>
+                    <p>
+                      Attack evaluation is the final stage of this research. Two
+                      main metrics are used, namely
+                      <em>Attack Success Rate</em> and
+                      <em>Accuracy After Attack</em>. -
+                      <strong>Attack Success Rate</strong> shows how often
+                      adversarial examples succeed in causing the victim model
+                      to make incorrect predictions. This metric helps analyze
+                      the effectiveness of the attack algorithm and the quality
+                      of the generated adversarial examples. -
+                      <strong>Accuracy After Attack</strong> is used to
+                      determine the model’s vulnerability level. This value is
+                      calculated by comparing the initial accuracy before the
+                      attack with the accuracy after the attack.
+                    </p>
+                    <p>
+                      The results of these two metrics provide a comprehensive
+                      picture of the model’s vulnerability to adversarial
+                      attacks and serve as a basis for future model improvements
+                      to make it more resilient to attack risks.
+                    </p>
+                    <p>
+                      In addition, the evaluation also covers three categories
+                      of adversarial examples: <strong>successful</strong>,
+                      <strong>failed</strong>, and <strong>skipped</strong>.
+                    </p>
+                    <ul class="simple">
+                      <li>
+                        <p>
+                          In <em>successful examples</em>, analysis is performed
+                          on changes in words, grammar, and similarities to the
+                          source text. Similarity is measured using cosine
+                          similarity, a popular technique for comparing two
+                          objects.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          In failed examples, the evaluation focuses on the
+                          algorithm and data to understand the cause of the
+                          attack failure.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          In skipped examples, the reasons why no modifications
+                          were made or why the algorithm was unable to continue
+                          further analysis are examined.
+                        </p>
+                      </li>
+                    </ul>
+                  </section>
+                </section>
+              </div>
+            </div>
+            <footer>
+              <div
+                class="rst-footer-buttons"
+                role="navigation"
+                aria-label="Footer"
+              >
+                <a
+                  href="attack_algorithm.html"
+                  class="btn btn-neutral float-left"
+                  title="Adversarial Attacks Algorithm: TextFooler"
+                  accesskey="p"
+                  rel="prev"
+                  ><span
+                    class="fa fa-arrow-circle-left"
+                    aria-hidden="true"
+                  ></span>
+                  Previous</a
+                >
+              </div>
+
+              <hr />
+
+              <div role="contentinfo">
+                <p>
+                  &#169; Copyright 2025, Aulia Arif Wardhana, Setio Basuki,
+                  Akmal Shahib Maulana.
+                </p>
+              </div>
+
+              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
+              a
+              <a href="https://github.com/readthedocs/sphinx_rtd_theme"
+                >theme</a
+              >
+              provided by <a href="https://readthedocs.org">Read the Docs</a>.
+            </footer>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      jQuery(function () {
+        SphinxRtdTheme.Navigation.enable(true);
+      });
+    </script>
+  </body>
+</html>
